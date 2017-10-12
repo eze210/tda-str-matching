@@ -15,6 +15,11 @@ const std::wstring readFile(const char* filename) {
 }
 
 int main(int argc, const char *argv[]) {
+	if (argc != 3) {
+		std::cerr << "Usage: ./tp <filename> <pattern>" << std::endl;
+		return 1;
+	}
+
 	std::cout << "Searching '" << argv[2] << 
 		"'' in '" << argv[1] << "'" << std::endl;
 
