@@ -4,20 +4,20 @@
 
 #include <cmath>
 #include <iostream>
-#include <string>
 
 static const double comparisonThreshold =  0.00001;
 
 class MatchCheck : public Callable<fftw::Real> {
 private:
-	const std::wstring &text;
-	const std::wstring &pattern;
+	const String &text;
+	const String &pattern;
 	size_t matches;
 	size_t falsePossitives;
 
 public:
-	MatchCheck(const std::wstring &text, const std::wstring &pattern) : 
+	MatchCheck(const String &text, const String &pattern) : 
 		text(text), pattern(pattern), matches(0), falsePossitives(0) {}
+	
 	void operator()(size_t index, 
 					fftw::Real &simple, 
 					fftw::Real &squared, 
@@ -44,8 +44,8 @@ public:
 };
 
 DFTMatcher::DFTMatcher(
-		const std::wstring &text, 
-		const std::wstring &pattern) :
+		const String &text, 
+		const String &pattern) :
 			textAsSignal(text.length()), 
 			patternAsSignal(text.length()),
 			text(text), pattern(pattern) {

@@ -1,15 +1,12 @@
 #include "DFTMatcher.h"
 
 #include <iostream>
-#include <string>
-
-#include <sstream>
 #include <fstream>
-#include <iostream>
+#include <sstream>
 
-const std::wstring readFile(const char* filename) {
-    std::wifstream wif(filename,std::ios::binary);
-    std::wstringstream wss;
+const String readFile(const char* filename) {
+    ifstream wif(filename, std::ios::binary);
+    sstream wss;
     wss << wif.rdbuf();
     return wss.str();
 }
@@ -24,11 +21,12 @@ int main(int argc, const char *argv[]) {
 		"'' in '" << argv[1] << "'" << std::endl;
 
 	clock_t begin = clock();
-	const std::wstring text = readFile(argv[1]);
+	const String text = readFile(argv[1]);
+	output << text << std::endl;
 
-	wchar_t patternBuffer[100];
-  	swprintf(patternBuffer, 100, L"%s", argv[2]);
-	const std::wstring pattern(patternBuffer);
+	Character patternBuffer[100];
+  	Print(patternBuffer, 100, StrFmt, argv[2]);
+	const String pattern(patternBuffer);
 
 	DFTMatcher matcher(text, pattern);
 

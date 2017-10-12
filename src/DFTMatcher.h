@@ -3,18 +3,16 @@
 
 #include "RealSignal.h"
 
-#include <string>
-
 class DFTMatcher {
 private:
 	RealSignal textAsSignal;
 	RealSignal patternAsSignal;
 
-	const std::wstring &text;
-	const std::wstring &pattern;
+	const String &text;
+	const String &pattern;
 
 public:
-	DFTMatcher(const std::wstring &text, const std::wstring &pattern);
+	DFTMatcher(const String &text, const String &pattern);
 	void match();
 };
 

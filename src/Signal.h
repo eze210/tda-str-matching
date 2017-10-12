@@ -2,8 +2,7 @@
 #define _SIGNAL_H_
 
 #include "Array.h"
-
-#include <string>
+#include "types.h"
 
 template<class T> class Callable {
 public:
@@ -42,7 +41,7 @@ public:
 			cube(2 * length, initValue) {
 	}
 
-	void parseWString(const std::wstring &wstring) {
+	void parseWString(const String &wstring) {
 		size_t length = wstring.length();
 		for (size_t i = 0; i < length; ++i) {
 			simple[i] = (T) wstring[i];
@@ -51,7 +50,7 @@ public:
 		}
 	}
 
-	void parseWStringReverse(const std::wstring &wstring) {
+	void parseWStringReverse(const String &wstring) {
 		size_t length = wstring.length();
 		for(size_t i=0; i < length; i++){
 			simple[i] = (T) wstring[length - i - 1];
