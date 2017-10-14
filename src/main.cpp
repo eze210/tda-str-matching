@@ -18,14 +18,13 @@ int main(int argc, const char *argv[]) {
 	}
 
 	std::cout << "Searching '" << argv[2] << 
-		"'' in '" << argv[1] << "'" << std::endl;
+		"' in '" << argv[1] << "'" << std::endl;
 
 	clock_t begin = clock();
 	const String text = readFile(argv[1]);
-	output << text << std::endl;
 
 	Character patternBuffer[100];
-  	Print(patternBuffer, 100, StrFmt, argv[2]);
+  	SPrint(patternBuffer, 100, StrFmt, argv[2]);
 	const String pattern(patternBuffer);
 
 	DFTMatcher matcher(text, pattern);

@@ -156,6 +156,15 @@ $(target): $(o_files)
 	fi >&2
 	$(LD) $(o_files) -o $(target) $(includes) $(LDFLAGS)
 
+wstring: $(o_files)
+	@if [ -z "$(o_files)" ]; \
+	then \
+		echo "No hay archivos de entrada en el directorio actual. Recuerde que la extensión debe ser '.$(extension)' y que no se aceptan directorios anidados."; \
+		if [ -n "$(directorios)" ]; then echo "Directorios encontrados: $(directorios)"; fi; \
+		false; \
+	fi >&2
+	$(LD) -DUSE_WSTRING $(o_files) -o $(target) $(includes) $(LDFLAGS)
+
 clean:
 	$(RM) $(o_files) $(target)
 

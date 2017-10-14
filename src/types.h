@@ -15,7 +15,7 @@ typedef std::wstring String;
 #define sstream std::wstringstream
 #define output std::wcout
 #define Character wchar_t
-#define Print swprintf
+#define SPrint swprintf
 #define StrFmt L"%s"
 #else
 typedef std::string String;
@@ -23,7 +23,7 @@ typedef std::string String;
 #define sstream std::stringstream
 #define output std::cout
 #define Character char
-#define Print snprintf
+#define SPrint snprintf
 #define StrFmt "%s"
 #endif
 
