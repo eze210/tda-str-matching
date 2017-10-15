@@ -1,6 +1,6 @@
 # String matching using Discrete Fourier Transform
 
-[**Read the explanation.**](//index.html)<br>
+[**Read the explanation.**](https://eze210.github.io/tda-str-matching/index.html)<br>
 
 ## Dependences
 
