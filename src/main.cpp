@@ -23,9 +23,13 @@ int main(int argc, const char *argv[]) {
 	clock_t begin = clock();
 	const String text = readFile(argv[1]);
 
+#ifdef USE_WSTRING
 	Character patternBuffer[100];
   	SPrint(patternBuffer, 100, StrFmt, argv[2]);
 	const String pattern(patternBuffer);
+#else
+	const String pattern(argv[2]);
+#endif
 
 	DFTMatcher matcher(text, pattern);
 
